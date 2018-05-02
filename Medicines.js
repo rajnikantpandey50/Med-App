@@ -1,12 +1,14 @@
 import React from 'react';
-import { ActivityIndicator, ListView, Text, View, ScrollView,TouchableOpacity,StyleSheet } from 'react-native';
+import { ActivityIndicator, ListView, Text, View, ScrollView,TouchableOpacity,StyleSheet,Image } from 'react-native';
 import {DrawerNavigator} from 'react-navigation';
+import Header from './Header';
+
 export default class Medicine extends React.Component {
     static navigationOptions={
-        drawerLable : 'Medicines',
-        drawerIcon: ({tintColor})=>(
+        title : 'Medicines',
+        drawerIcon : ({tintColor}) => (
             <Image 
-                source = {require('./Images/medicine.png')}
+                source= {require('./Images/medicine.png')}
                 style = {styles.icon}
                 />
         ),
@@ -24,7 +26,7 @@ export default class Medicine extends React.Component {
   }
 
   componentDidMount() {
-    var response = fetch('http://192.168.0.6:8080/medicines');
+    var response = fetch('http://192.168.0.3:8080/medicines');
        response.then(response => response.json())
         .then((responsejson)=>{
           //  console.log(responsejson);
@@ -43,7 +45,7 @@ export default class Medicine extends React.Component {
   render() {
     if(this.state.isLoading){
       return(
-        <View style={{flex: 1, padding: 20,alignItems:'center'}}>
+        <View style={{flex: 1, padding: 20,alignItems:'center',justifyContent:'center'}}>
           <ActivityIndicator/>
         </View>
       )
@@ -51,9 +53,7 @@ export default class Medicine extends React.Component {
     
       return (
         <View>
-        <View style = {{backgroundColor:'steelblue',height:70,alignItems:'center'}}>
-          <Text style = {{padding:30,color:'#fff',fontSize:20,fontWeight:'bold'}}>Medicine List</Text>
-        </View>
+        <Header text = 'Medicines List' />
         <ScrollView>
           
           {

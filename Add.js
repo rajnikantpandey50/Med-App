@@ -1,6 +1,8 @@
 import React from 'react';
 import { ActivityIndicator, ListView, Text, View, ScrollView,TouchableOpacity,StyleSheet } from 'react-native';
 import {DrawerNavigator} from 'react-navigation';
+import Header from './Header';
+
 export default class Add extends React.Component {
     static navigationOptions={
         drawerLable : 'Add',
@@ -12,7 +14,8 @@ export default class Add extends React.Component {
     
       return (
         <View>
-        <Text>Buy Medicines</Text>
+            <Header text = 'Add Medicines' />
+            <Text>Buy Medicines</Text>
         </View>
       );
     
