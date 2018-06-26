@@ -6,18 +6,20 @@ export default class Header extends React.Component{
     constructor(props){
         super(props);
     }
+
+    drawerOpen = ()=>{
+        
+    }
     
     render(){
         
         return(
             <View style = {styles.container}>
-                <View style = {{flex:1,flexDirection:'row'}}>
-                <TouchableOpacity
-                style = {styles.icon}>
+                <View style = {styles.outerView}>
                 <Icon name = 'menu' size={30} color = '#fff'
-                    
+                style = {styles.icon}  
+                onPress = {this.drawerOpen}
                 />
-                </TouchableOpacity>
                 <Text style = {styles.text}>{this.props.text}</Text>
                 </View>
             </View>
@@ -32,12 +34,11 @@ const styles = StyleSheet.create({
         alignItems:'center',
     },
     text : {
-        padding:30,
         color:'#fff',
         fontSize:20,
         fontWeight:'bold',
         height:90,
-        flex:1
+        flex:2
     },
     button:{
         flex:1
@@ -45,7 +46,12 @@ const styles = StyleSheet.create({
     icon : {
         
         flex : 1,
-        height:24,
-        width:24
+        
+    },
+    outerView:{
+        flex:1,
+        flexDirection:'row',
+        paddingTop:37,
+        paddingLeft:10
     }
 })

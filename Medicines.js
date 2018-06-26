@@ -26,7 +26,7 @@ export default class Medicine extends React.Component {
   }
 
   componentDidMount() {
-    var response = fetch('http://192.168.0.3:8080/medicines');
+    var response = fetch('http://192.168.0.5:8080/medicines');
        response.then(response => response.json())
         .then((responsejson)=>{
           //  console.log(responsejson);
