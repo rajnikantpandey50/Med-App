@@ -1,0 +1,47 @@
+{"data":[
+    {
+        "id":1,
+        "medicineName":"Nimesulide",
+        "manufacturerName" : "Ranbaxy",
+        "price":100,
+        "quantity":5,
+        "expiryDate":"24-12-2019",
+        "purchaseDate":"25-06-2018"
+    },
+    {
+        "id":2,
+        "medicineName":"Pentofer",
+        "manufacturerName" : "Ranbaxy",
+        "price":100,
+        "quantity":5,
+        "expiryDate":"24-12-2019",
+        "purchaseDate":"25-06-2018"
+    },
+    {
+        "id":3,
+        "medicineName":"Ofloxacine",
+        "manufacturerName" : "Ranbaxy",
+        "price":100,
+        "quantity":5,
+        "expiryDate":"24-12-2019",
+        "purchaseDate":"25-06-2018"
+    },
+    {
+        "id":4,
+        "medicineName":"Betinsole",
+        "manufacturerName" : "Ranbaxy",
+        "price":100,
+        "quantity":5,
+        "expiryDate":"24-12-2019",
+        "purchaseDate":"25-06-2018"
+    },
+    {
+        "id":5,
+        "medicineName":"Digene",
+        "manufacturerName" : "Ranbaxy",
+        "price":100,
+        "quantity":5,
+        "expiryDate":"24-12-2019",
+        "purchaseDate":"25-06-2018"
+    }
+]}

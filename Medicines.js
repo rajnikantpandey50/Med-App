@@ -1,6 +1,6 @@
 import React from 'react';
 import { ActivityIndicator, ListView, Text, View, ScrollView,TouchableOpacity,StyleSheet,Image } from 'react-native';
-import {DrawerNavigator} from 'react-navigation';
+import {DataTable} from 'primereact/components/datatable/DataTable';
 import Header from './Header';
 
 export default class Medicine extends React.Component {
@@ -26,11 +26,14 @@ export default class Medicine extends React.Component {
   }
 
   componentDidMount() {
-    var response = fetch('http://192.168.0.5:8080/medicines');
-       response.then(response => response.json())
-        .then((responsejson)=>{
-          //  console.log(responsejson);
-            this.setState({data:responsejson,isLoading:false})});
+    //var response = fetch('http://192.168.0.6:8080/medicines');
+    var response = require('./data.json');
+    // response.then(response => response.json())
+    //  .then((responsejson)=>{
+    //     console.log(responsejson);
+    //         this.setState({data:responsejson,isLoading:false})});
+    console.log(response.data);
+    this.setState({data:response.data,isLoading:false});
   }
 
   handleClick=(id)=>{
@@ -50,11 +53,23 @@ export default class Medicine extends React.Component {
         </View>
       )
     }
+    let cols = [
+      {field:"medicineName",header:"Medicine Name"},
+      {field:"manufacturerName",header:"Manufacturer Name"},
+      {field:"price",header:"Price"},
+      {field:"quantity",header:"Quantity"},
+      {field:"expiryDate",header:"Expiry Date"},
+      {field:"purchaseDate",header:"Purchase Date"}
+    ];
+
+    let dynamicColumns = cols.map((col,i) => {
+      return <Column key={col.field} field={col.field} header={col.header} />;
+    });
     
       return (
         <View>
         <Header text = 'Medicines List' />
-        <ScrollView>
+        {/* <ScrollView>
           
           {
             this.state.data.map((value,index)=>(
@@ -71,7 +86,12 @@ export default class Medicine extends React.Component {
             </View>
             ))
           }
-        </ScrollView>
+        </ScrollView> */}
+
+        <DataTable value = {this.state.data}>
+          {dynamicColumns}
+        </DataTable>
+
         </View>
       );
     
