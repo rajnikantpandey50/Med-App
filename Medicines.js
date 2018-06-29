@@ -1,6 +1,6 @@
 import React from 'react';
 import { ActivityIndicator, ListView, Text, View, ScrollView,TouchableOpacity,StyleSheet,Image } from 'react-native';
-import {DataTable} from 'primereact/components/datatable/DataTable';
+//import {DataTable} from 'primereact/components/datatable/DataTable';
 import Header from './Header';
 
 export default class Medicine extends React.Component {
@@ -69,7 +69,7 @@ export default class Medicine extends React.Component {
       return (
         <View>
         <Header text = 'Medicines List' />
-        {/* <ScrollView>
+        <ScrollView>
           
           {
             this.state.data.map((value,index)=>(
@@ -86,11 +86,11 @@ export default class Medicine extends React.Component {
             </View>
             ))
           }
-        </ScrollView> */}
+        </ScrollView>
 
-        <DataTable value = {this.state.data}>
+        {/* <DataTable value = {this.state.data}>
           {dynamicColumns}
-        </DataTable>
+        </DataTable> */}
 
         </View>
       );
